@@ -16,7 +16,7 @@ const clearTableBody = () => document.querySelector('tbody').innerHTML = ''
 const loadIntoTable = (data: TableRowData[]) => {
     var temp = "";
     data.forEach((x) => {
-        temp += "<tr>";
+        temp += `<tr data-entryid=${x.id}>`;
         temp += "<td>" + x.row + "</td>";
         temp += "<td>" + x.gender + "</td>";
         temp += "<td>" + x.age + "</td>";
