@@ -12,7 +12,7 @@ const prevBtn: HTMLButtonElement = document.querySelector("[data-prevbtn]");
 const nextBtn: HTMLButtonElement = document.querySelector("[data-nextbtn]");
 const pageview: HTMLButtonElement = document.querySelector("[data-pageview]");
 
-const clearTableBody = () => document.querySelector('tbody').innerHTML = ''
+const clearTableBody = () => document.querySelector('tbody').innerHTML = '';
 
 const loadIntoTable = (data: TableRowData[]) => {
     var temp = "";
@@ -52,7 +52,6 @@ const getData = async (pageNumber: number = 1) => {
     pageNumber  = pageNumber - 1
     const newPageData = await getData(pageNumber)
 
-
         //@ts-ignore
     loadIntoTable(newPageData[pageNumber])
   });
@@ -65,7 +64,6 @@ const getData = async (pageNumber: number = 1) => {
     if(prevPageNumber === 1){
         prevBtn?.removeAttribute("disabled");
     }
-
         //@ts-ignore
     loadIntoTable(newPageData[pageNumber])
   });
