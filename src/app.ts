@@ -45,7 +45,7 @@ const getData = async (pageNumber: number = 1) => {
 
   prevBtn?.addEventListener("click", async() => {
     if(pageNumber === 1) {
-        prevBtn.disabled = true;
+        prevBtn?.setAttribute("disabled", "true");
         return
     }
     const prevPageNumber = pageNumber
@@ -63,7 +63,7 @@ const getData = async (pageNumber: number = 1) => {
     const newPageData = await getData(pageNumber)
     
     if(prevPageNumber === 1){
-        prevBtn.disabled = false;
+        prevBtn?.removeAttribute("disabled");
     }
 
         //@ts-ignore
@@ -71,7 +71,7 @@ const getData = async (pageNumber: number = 1) => {
   });
 
 const startApp = async () => {
-    prevBtn.disabled = true;
+    prevBtn?.setAttribute("disabled", "true");
     const pageOneandTwoData = await getData(pageNumber)
     const pageOneData = pageOneandTwoData[1]
     //@ts-ignore
