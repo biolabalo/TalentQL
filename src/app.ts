@@ -10,6 +10,7 @@ const table = document.querySelector('table')
 const tableBody = table.querySelector('tbody')
 const prevBtn: HTMLButtonElement = document.querySelector("[data-prevbtn]");
 const nextBtn: HTMLButtonElement = document.querySelector("[data-nextbtn]");
+const pageview: HTMLButtonElement = document.querySelector("[data-pageview]");
 
 const clearTableBody = () => document.querySelector('tbody').innerHTML = ''
 
@@ -22,8 +23,9 @@ const loadIntoTable = (data: TableRowData[]) => {
         temp += "<td>" + x.age + "</td>";
         temp += "</tr>"
     });
-    clearTableBody()
+    clearTableBody();
     document.querySelector('tbody').innerHTML += temp;
+    pageview.innerHTML = `Showing Page ${pageNumber}`;
 }
 
 const getData = async (pageNumber: number = 1) => {
